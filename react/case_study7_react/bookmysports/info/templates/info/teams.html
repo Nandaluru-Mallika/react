@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    All Teams
+{% endblock title %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{% static "info/stadiums.css" %}">
+{% endblock css_styles %}
+
+{% block content %}
+<div class="container">
+    <ul>
+        {% for team in teams %}
+            <div>
+                <li><a href="{% url "team_detail" team.pk %}">{{ team.team_name }}</a></li>
+            </div>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

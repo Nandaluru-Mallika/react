@@ -1,0 +1,52 @@
+html, body {height: 100%} /* mandatory */
+body {margin: 0} /* mandatory */
+
+body{
+    background-image: url('https://www.oneindia.com/img/2023/12/ipl-20241-1702966527.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+ }
+
+nav {
+    position: absolute;
+    top: calc(50% - 350px); /* moved down by 50% of the screen height - half of the container's height - navbar's height */
+    width: 1400px;
+    max-width: 100%;
+    height: 50px;
+    background: #333;
+}
+
+nav a {
+    display: inline-block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+.logout-link{
+    margin-left: 60%;
+}
+.container{
+    width: 1300px;
+    height: 500px;
+    max-width: 100%;
+    background: rgba(255,255,255,0.8);
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    padding: auto;
+    padding-left: 30px;
+    
+}
+
+/* .profile-link{
+    margin-left: 10%;
+} */

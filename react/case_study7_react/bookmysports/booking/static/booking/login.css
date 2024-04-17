@@ -1,0 +1,77 @@
+/* login_style.css */
+
+body{
+    background-image: url("https://feeds.abplive.com/onecms/images/uploaded-images/2023/03/30/51b8290feee8be01e2767a5678e8581b1680183626765567_original.jpg");
+    background-size: cover;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form .form-group {
+    margin-bottom: 15px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.error-message {
+    color: red;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+    
+}
+
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 38%;
+    top: 34%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+}

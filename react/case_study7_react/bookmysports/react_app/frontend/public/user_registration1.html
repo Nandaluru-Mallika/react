@@ -1,0 +1,23 @@
+<!-- user_registration.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    User Registration
+{% endblock title %}
+
+{% block content %}
+    <div id="user-registration-form"></div>
+
+    <!-- Include React and your UserRegistrationForm component -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="../src/user_registration.js"></script>
+
+    <script>
+        ReactDOM.render(
+            React.createElement(UserRegistrationForm),
+            document.getElementById('user-registration-form')
+        );
+    </script>
+{% endblock content %}

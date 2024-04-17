@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Invoice
+{% endblock title %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{% static "booking/invoice.css" %}">
+{% endblock css_styles %}
+
+{% block content %}
+<div class="container">
+    <h1>Payment Successfull</h1>
+    <h3>Name: {{invoice.user.user_name}}</h3> 
+    <h3>Match Name: {{invoice.match.match_name}}</h3>
+    <h3>Venue: {{invoice.match.match_venue}}</h3>
+    <h3>Date: {{invoice.match.match_date}}</h3>
+    <h3>Time: {{invoice.match.match_time}}</h3>
+    {% if invoice.seats_in_stand_A > 0 %}
+    <h3>Stand A: {{invoice.seats_in_stand_A}}</h3>
+    {% endif %}
+    {% if invoice.seats_in_stand_B > 0 %}
+    <h3>Stand B: {{invoice.seats_in_stand_B}}</h3>
+    {%endif %}
+    {% if invoice.seats_in_stand_C > 0 %}
+    <h3>Stand C: {{invoice.seats_in_stand_C}}</h3>
+    {%endif %}
+    {% if invoice.seats_in_stand_D > 0 %}
+    <h3>Stand D: {{invoice.seats_in_stand_D}}</h3>
+    {%endif %}
+    <h3>Total Amount: ₹{{invoice.total_cost}}</h3>
+</div>
+    
+   
+{% endblock content %}

@@ -1,0 +1,125 @@
+/* user_registration.css */
+body{
+    background-image: url('https://www.stylewithglamour.com/wp-content/uploads/2024/03/ipl-2024-schedule-detail.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 70px;
+ 
+  
+
+}
+
+/* Form container */
+.container {
+    max-width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 0255, 0255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: scroll;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.signup{
+    text-align: center;
+    color: #fff;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Label */
+label {
+    font-weight: bold;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Password visibility toggle */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-input input[type="password"] {
+    padding-right: 40px; /* Adjust based on icon size */
+}
+
+
+
+
+/* Gender radio buttons */
+.gender-radio-group {
+    margin-bottom: 10px;
+}
+
+.radio-label {
+    margin-right: 10px; /* Adjust spacing between radio buttons and labels */
+}
+
+/* Submit button */
+.button {
+    width: 20%;
+    position: absolute;
+    top: 91%;
+    left:40%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Error message */
+.error-message {
+    color: red;
+}
+
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: black;
+    width: 20%;
+    position: absolute;
+    top: 85%;
+    left:40%;
+}
+
+.register-link a {
+    color:coral;
+    text-decoration: none;
+    
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

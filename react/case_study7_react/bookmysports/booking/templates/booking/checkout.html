@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Checkout
+{% endblock title %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{% static "booking/checkout.css" %}">
+{% endblock css_styles %}
+
+
+{% block content %}
+
+<div class="container">
+    <h1>Checkout</h1>
+    <p>Selected Stands:</p>
+    <ul>
+        {% for stand_data in selected_stands %}
+            <li>Stand {{ stand_data.stand }} - {{ stand_data.num_tickets }} ticket(s)</li>
+        {% endfor %}
+    </ul>
+    <p>Total Amount: ₹{{ total_amount }}</p>
+    <form method="post" action="{% url 'payment' %}">
+        {% csrf_token %}
+        <input type="hidden" name="match_id" value="{{ match.id }}">
+        <input type="hidden" name="selected_stands_data" value="{{ selected_stands_data }}">
+        <input type="hidden" name="total_amount" value="{{ total_amount }}">
+        <button type="submit">Proceed to Payment</button>
+    </form>
+</div>
+{% endblock content %}

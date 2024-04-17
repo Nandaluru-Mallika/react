@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ stadium.stadium_name }}
+{% endblock title %}
+
+{% block css_styles %}
+<link rel="stylesheet" href="{% static "info/stadium_detail.css" %}">
+{% endblock css_styles %}
+
+{% block content %}
+<div class="container">
+    <div class="stadiumcontent">
+    {{ stadium.stadium_name }}<br>
+    Capacity : {{ stadium.capacity }}<br>
+    Address : {{ stadium.stadium_address }}<br>
+    </div>
+</div>
+    
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Payment
+{% endblock title %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{% static "booking/payment.css" %}">
+{% endblock css_styles %}
+
+{% block content %}
+<div class="container">
+    <form class="payment-form" method="post" autocomplete="off">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ total_amount }}
+        <button type="submit">Pay Now</button>
+    </form>
+</div>
+{% endblock content %}

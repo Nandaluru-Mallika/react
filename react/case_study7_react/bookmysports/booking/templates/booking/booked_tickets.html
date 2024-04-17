@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Booked Tickets
+{% endblock title %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{% static "booking/booked_tickets.css" %}">
+{% endblock css_styles %}
+
+{% block content %}
+    <div class="container">
+    {% if not invoices %}
+        <h1>No tickets booked</h1>
+    {% else %}
+        <h1>Booked Tickets</h1>
+        <div class="ticket-container">
+            {% for invoice in invoices %}
+            <div class="ticket-box">
+                <h3>Match Name: {{invoice.match.match_name}}</h3>
+                <h3>Venue: {{invoice.match.match_venue}}</h3>
+                <h3>Date: {{invoice.match.match_date}}</h3>
+                <h3>Time: {{invoice.match.match_time}}</h3>
+                {% if invoice.seats_in_stand_A > 0 %}
+                <h3>Stand A: {{invoice.seats_in_stand_A}} Ticket(s)</h3>
+                {% endif %}
+                {% if invoice.seats_in_stand_B > 0 %}
+                <h3>Stand B: {{invoice.seats_in_stand_B}} Ticket(s)</h3>
+                {% endif %}
+                {% if invoice.seats_in_stand_C > 0 %}
+                <h3>Stand C: {{invoice.seats_in_stand_C}} Ticket(s)</h3>
+                {% endif %}
+                {% if invoice.seats_in_stand_D > 0 %}
+                <h3>Stand D: {{invoice.seats_in_stand_D}} Ticket(s)</h3>
+                {% endif %}
+                <h3>Total Amount: ₹{{invoice.total_cost}}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    </div>
+{% endblock content %}

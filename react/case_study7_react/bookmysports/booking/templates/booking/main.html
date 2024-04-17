@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+    <style>
+        body {
+            background-image: url('https://crickettimes.com/wp-content/uploads/2023/03/IPL-2023-broadcast-and-streaming-details-1260x657.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            max-width: 900px;
+            height: 500px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: auto; /* Add scroll bar if content exceeds height */
+            display: flex;
+            flex-direction: column;
+            
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-family: 'URW Chancery L', cursive;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .quote b {
+            font-style: italic;
+            margin: 0;
+            font-style: italic;
+            
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'login' %}" class="btn">Login</a>
+        <a href="{% url 'registration' %}" class="btn">Signup</a>
+    </div>
+    <div class="container">
+        <ul>
+        <h1>Welcome to Book My Sports</h1>
+    </ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <div class="quote">
+        <b>"Catch every heartbeat of the game. Reserve your seats and witness the magic!"</b>
+    </div>
+    <ul></ul>
+        
+        <div class="btn-container">
+            <a href="{% url 'login' %}" class="btn">Get Started to Book Tickets</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Select Stands and Number of Tickets
+{% endblock title %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{% static "booking/select_stands.css" %}">
+{% endblock css_styles %}
+
+
+{% block content %}
+<div class="container">
+    <h1>Select Stands and Number of Tickets</h1>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    <form id="checkoutForm" method="POST" action="{% url 'book_match' match.id %}">
+        {% csrf_token %}
+        <input type="hidden" name="match_id" value="{{ match.id }}">
+        <ul>
+            {% for stand in stands %}
+                <li>
+                    <label>
+                        <strong>Stand {{ stand.name }}</strong> - Rate: ₹{{ stand.rate }} - Available Tickets: {{ stand.available_tickets }}
+                    </label>
+                    <input type="number" name="tickets_{{ stand.name }}" min="0" max="{{ stand.available_tickets }}" value="0">
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Checkout</button>
+    </form>
+</div>
+{% endblock content %}

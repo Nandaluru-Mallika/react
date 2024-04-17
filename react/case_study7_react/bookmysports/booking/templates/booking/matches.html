@@ -1,0 +1,64 @@
+<!-- upcoming_matches.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Upcoming Matches
+{% endblock title %}
+
+{% block css_styles %}
+<link rel="stylesheet" href="{% static "booking/matches.css" %}">
+{% endblock css_styles %}
+
+{% block content %}
+   <div class="container">
+    <h1>Upcoming Matches</h1>  
+   <div class="team-filter">
+        <form method="get">
+            {% csrf_token %}
+            <label for="team-filter">Select Team:</label>
+            <select id="team-filter" name="team">
+                <option value="">All Teams</option>
+                {% for team in teams %}
+                     <option value= "{{team.abbrevation}}"> {{team.team_name}}</optiom>
+                {% endfor %}
+            </select>
+            <button type="submit">Filter</button>
+        </form>
+    </div> 
+    <div class="matches-container">
+        {% for match in upcoming_matches %}
+            <div class="match-box">
+                <div class="match-details">
+                    <p>{{ match.match_name }}</p>
+                    <p>Date: {{ match.match_date }}</p>
+                    <p>Time: {{ match.match_time }}</p>
+                </div>
+                <a href="{% url 'book_match' match.pk %}" class="book-button">Book</a>
+            </div>
+        {% empty %}
+            <p>No upcoming matches</p>
+        {% endfor %}
+    </div>
+</div>
+<script>
+    const dropdownBtn = document.querySelector(".dropdown-btn");
+    const dropdownCaret = document.querySelector(".arrow");
+    const dropdownContent = document.querySelector(".dropdown-content");
+    
+    // add click event to dropdown button
+    dropdownBtn.addEventListener("click", () => {
+      // add rotate to caret element
+      dropdownCaret.classList.toggle("arrow-rotate");
+      // add open styles to menu element
+      dropdownContent.classList.toggle("menu-open");
+    });
+    dropdownBtn.addEventListener("click", () => {
+        //...
+        dropdownBtn.setAttribute(
+          "aria-expanded",
+          dropdownBtn.getAttribute("aria-expanded") === "true" ? "false" : "true"
+        );
+      });
+</script>
+{% endblock content %}
